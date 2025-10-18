@@ -13,6 +13,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Resume from "./pages/Resume";
+import "./App.css"
 
 function AppContent() {
     const location = useLocation();
