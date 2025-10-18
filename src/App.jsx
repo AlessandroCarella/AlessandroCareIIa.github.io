@@ -1,16 +1,45 @@
 // src/App.jsx
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    useLocation,
+    useNavigate,
+} from "react-router-dom";
 import { Container } from "react-bootstrap";
+import { Home as HomeIcon, User, Briefcase, FileText } from "lucide-react";
 import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Resume from "./pages/Resume";
 
-function App() {
+function AppContent() {
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleNavigate = (path) => {
+        navigate(path);
+    };
+
     return (
-        <Router>
-            <Navigation />
+        <>
+            <Navigation
+                brandName="Alessandro Carella"
+                currentPath={location.pathname}
+                onNavigate={handleNavigate}
+                backgroundColor="#010409"
+                textColor="#f0f6fc"
+                brandFontSize="3rem"
+                linkFontSize="2rem"
+                iconSize={28}
+                navItems={[
+                    { path: "/", label: "Home", icon: HomeIcon },
+                    { path: "/about", label: "About", icon: User },
+                    { path: "/projects", label: "Projects", icon: Briefcase },
+                    { path: "/resume", label: "Resume", icon: FileText },
+                ]}
+            />
             <Container className="mt-4">
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -19,6 +48,14 @@ function App() {
                     <Route path="/resume" element={<Resume />} />
                 </Routes>
             </Container>
+        </>
+    );
+}
+
+function App() {
+    return (
+        <Router>
+            <AppContent />
         </Router>
     );
 }
