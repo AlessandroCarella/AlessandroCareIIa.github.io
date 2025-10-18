@@ -1,5 +1,7 @@
 import TextPressure from "../components/TextPressure";
 import ProjectCard from "../components/ProjectCard";
+import GitFlowDemo from "../components/demo/GitFlowDemo"
+import SkillsDemo from "../components/demo/SkillsDemo";
 
 const Home = () => {
     const projects = [
@@ -59,7 +61,7 @@ const Home = () => {
                 strokeColor="#ff0000"
                 minFontSize={72}
             />{" "} */}
-            <section className="projects-grid">
+            {/* <section className="projects-grid">
                 {projects.map((project, index) => (
                     <ProjectCard
                         key={index}
@@ -72,7 +74,9 @@ const Home = () => {
                         colors={project.colors}
                     />
                 ))}
-            </section>
+            </section> */}
+            <SkillsDemo></SkillsDemo>
+            {/* <GitFlowDemo></GitFlowDemo> */}
         </div>
     );
 };
