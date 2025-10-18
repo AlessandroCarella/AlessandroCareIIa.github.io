@@ -1,12 +1,25 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { Home, User, Briefcase, FileText } from "lucide-react";
 import "./styles/Navigation.css";
 
-function Navigation() {
+function Navigation({
+    brandName = "Navigation component",
+    navItems = [
+        { path: "/", label: "Home", icon: Home },
+        { path: "/about", label: "About", icon: User },
+        { path: "/projects", label: "Projects", icon: Briefcase },
+        { path: "/resume", label: "Resume", icon: FileText },
+    ],
+    backgroundColor = "#000000",
+    textColor = "white",
+    brandFontSize = "3rem",
+    linkFontSize = "2rem",
+    iconSize = 28,
+    currentPath = "/",
+    onNavigate = () => {},
+}) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const location = useLocation();
     const menuRef = useRef(null);
     const toggleRef = useRef(null);
 
@@ -21,9 +34,8 @@ function Navigation() {
 
     useEffect(() => {
         setIsMobileMenuOpen(false);
-    }, [location]);
+    }, [currentPath]);
 
-    // Close menu when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (
@@ -42,20 +54,31 @@ function Navigation() {
             document.removeEventListener("mousedown", handleClickOutside);
     }, [isMobileMenuOpen]);
 
-    const navItems = [
-        { path: "/", label: "Home", icon: Home },
-        { path: "/about", label: "About", icon: User },
-        { path: "/projects", label: "Projects", icon: Briefcase },
-        { path: "/resume", label: "Resume", icon: FileText },
-    ];
+    const handleNavClick = (path, e) => {
+        e.preventDefault();
+        setIsMobileMenuOpen(false);
+        onNavigate(path);
+    };
 
     return (
-        <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+        <nav
+            className={`navbar ${isScrolled ? "scrolled" : ""}`}
+            style={{
+                "--nav-bg-color": backgroundColor,
+                "--nav-text-color": textColor,
+                "--brand-font-size": brandFontSize,
+                "--link-font-size": linkFontSize,
+            }}
+        >
             <div className="nav-container">
                 <div className="nav-brand-wrapper">
-                    <Link to="/" className="nav-brand">
-                        <span className="brand-first">Alessandro Carella</span>
-                    </Link>
+                    <a
+                        href="/"
+                        className="nav-brand"
+                        onClick={(e) => handleNavClick("/", e)}
+                    >
+                        <span className="brand-first">{brandName}</span>
+                    </a>
                 </div>
 
                 <div
@@ -65,20 +88,19 @@ function Navigation() {
                     {navItems.map((item, index) => {
                         const Icon = item.icon;
                         return (
-                            <Link
+                            <a
                                 key={item.path}
-                                to={item.path}
+                                href={item.path}
                                 className={`nav-link ${
-                                    location.pathname === item.path
-                                        ? "active"
-                                        : ""
+                                    currentPath === item.path ? "active" : ""
                                 }`}
                                 style={{ "--item-index": index }}
+                                onClick={(e) => handleNavClick(item.path, e)}
                             >
-                                <Icon size={24} />
+                                <Icon size={iconSize} />
                                 <span>{item.label}</span>
                                 <span className="link-underline"></span>
-                            </Link>
+                            </a>
                         );
                     })}
                 </div>

@@ -30,8 +30,8 @@ function AppContent() {
                 onNavigate={handleNavigate}
                 backgroundColor="#010409"
                 textColor="#f0f6fc"
-                brandFontSize="3rem"
-                linkFontSize="2rem"
+                brandFontSize="1.7rem"
+                linkFontSize="1.2rem"
                 iconSize={28}
                 navItems={[
                     { path: "/", label: "Home", icon: HomeIcon },
