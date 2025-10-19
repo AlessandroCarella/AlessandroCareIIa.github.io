@@ -1,6 +1,5 @@
 import TextPressure from "../components/TextPressure";
 import ProjectCard from "../components/ProjectCard";
-import GitFlowDemo from "../components/demo/GitFlowDemo"
 import SkillsDemo from "../components/demo/SkillsDemo";
 
 const Home = () => {
@@ -37,27 +36,27 @@ const Home = () => {
 
     return (
         <div>
-            {/* <TextPressure
-                text="Hello, welcome"
+            <TextPressure
+                text="Welcome to my portfolio!"
                 flex={true}
                 alpha={false}
                 stroke={false}
                 width={true}
                 weight={true}
                 italic={true}
-                textColor="#000000"
+                textColor="#ffffff"
                 strokeColor="#ff0000"
                 minFontSize={72}
             />{" "}
-            <TextPressure
-                text="to my portfolio!"
+            {/* <TextPressure
+                text="my portfolio!"
                 flex={true}
                 alpha={false}
                 stroke={false}
                 width={true}
                 weight={true}
                 italic={true}
-                textColor="#000000"
+                textColor="#ffffff"
                 strokeColor="#ff0000"
                 minFontSize={72}
             />{" "} */}
@@ -75,8 +74,7 @@ const Home = () => {
                     />
                 ))}
             </section> */}
-            <SkillsDemo></SkillsDemo>
-            {/* <GitFlowDemo></GitFlowDemo> */}
+            {/* <SkillsDemo></SkillsDemo> */}
         </div>
     );
 };

@@ -33,7 +33,7 @@ function AppContent() {
                 textColor="#f0f6fc"
                 brandFontSize="1.7rem"
                 linkFontSize="1.2rem"
-                iconSize={28}
+                iconSize={35}
                 navItems={[
                     { path: "/", label: "Home", icon: HomeIcon },
                     { path: "/about", label: "About", icon: User },
