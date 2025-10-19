@@ -1,0 +1,201 @@
+/* Add these styles to your App.css file */
+
+/* Base text styles */
+.text-primary {
+    color: #f0f6fc;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.text-secondary {
+    color: #c9d1d9;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.text-muted {
+    color: #8b949e;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Heading styles */
+.heading-xl {
+    color: #f0f6fc;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.heading-lg {
+    color: #f0f6fc;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.875rem;
+}
+
+.heading-md {
+    color: #f0f6fc;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+}
+
+.heading-sm {
+    color: #c9d1d9;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+/* Paragraph styles */
+.paragraph {
+    color: #c9d1d9;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.paragraph-lg {
+    color: #c9d1d9;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+}
+
+.paragraph-sm {
+    color: #8b949e;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+/* Emphasis text */
+.text-emphasis {
+    color: #58a6ff;
+    font-weight: 500;
+}
+
+.text-highlight {
+    color: #f0f6fc;
+    font-weight: 600;
+    background: linear-gradient(
+        120deg,
+        rgba(88, 166, 255, 0.2) 0%,
+        rgba(88, 166, 255, 0.1) 100%
+    );
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+}
+
+/* Link styles */
+.text-link {
+    color: #58a6ff;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.text-link:hover {
+    color: #79c0ff;
+    border-bottom-color: #58a6ff;
+}
+
+/* Section styles */
+.content-section {
+    color: #c9d1d9;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-section p {
+    margin-bottom: 1.25rem;
+}
+
+.content-section h1,
+.content-section h2,
+.content-section h3,
+.content-section h4 {
+    color: #f0f6fc;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* List styles */
+.text-list {
+    color: #c9d1d9;
+    line-height: 1.7;
+    padding-left: 1.5rem;
+}
+
+.text-list li {
+    margin-bottom: 0.5rem;
+}
+
+.text-list li::marker {
+    color: #58a6ff;
+}
+
+/* Code/Technical text */
+.text-code {
+    color: #79c0ff;
+    background: #161b22;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+/* Quote styles */
+.text-quote {
+    color: #8b949e;
+    font-style: italic;
+    border-left: 3px solid #58a6ff;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    line-height: 1.8;
+}
+
+/* Responsive text sizing */
+@media (max-width: 768px) {
+    .heading-xl {
+        font-size: 2rem;
+    }
+
+    .heading-lg {
+        font-size: 1.75rem;
+    }
+
+    .heading-md {
+        font-size: 1.35rem;
+    }
+
+    .paragraph-lg {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading-xl {
+        font-size: 1.75rem;
+    }
+
+    .heading-lg {
+        font-size: 1.5rem;
+    }
+
+    .heading-md {
+        font-size: 1.25rem;
+    }
+
+    .text-primary,
+    .text-secondary,
+    .paragraph {
+        font-size: 0.95rem;
+    }
+}
