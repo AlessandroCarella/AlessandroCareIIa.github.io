@@ -21,6 +21,7 @@
 
 /* Heading styles */
 .heading-xl {
+    padding-top: 1.3rem;
     color: #f0f6fc;
     font-size: 2.5rem;
     font-weight: 700;
@@ -29,6 +30,7 @@
 }
 
 .heading-lg {
+    padding-top: 1.3rem;
     color: #f0f6fc;
     font-size: 2rem;
     font-weight: 700;
@@ -37,6 +39,7 @@
 }
 
 .heading-md {
+    padding-top: 1.3rem;
     color: #f0f6fc;
     font-size: 1.5rem;
     font-weight: 600;
@@ -45,6 +48,7 @@
 }
 
 .heading-sm {
+    padding-top: 1.3rem;
     color: #c9d1d9;
     font-size: 1.25rem;
     font-weight: 600;

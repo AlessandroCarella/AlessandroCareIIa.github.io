@@ -1,6 +1,11 @@
 html,
 body {
     background-color: #0d1117 !important;
-    color: white!important;
+    color: white !important;
 }
 
+.app-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+}

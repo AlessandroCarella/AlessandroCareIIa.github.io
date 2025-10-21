@@ -13,8 +13,8 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Resume from "./pages/Resume";
-import "./styles/App.css"
-import "./styles/text.css"
+import "./styles/App.css";
+import "./styles/text.css";
 
 function AppContent() {
     const location = useLocation();
@@ -42,14 +42,14 @@ function AppContent() {
                     { path: "/resume", label: "Resume", icon: FileText },
                 ]}
             />
-            <Container className="mt-4">
+            <div className="app-container mt-4">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/resume" element={<Resume />} />
                 </Routes>
-            </Container>
+            </div>
         </>
     );
 }

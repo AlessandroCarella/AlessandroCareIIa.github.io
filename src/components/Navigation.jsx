@@ -20,8 +20,23 @@ function Navigation({
 }) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const navRef = useRef(null);
     const menuRef = useRef(null);
     const toggleRef = useRef(null);
+
+    // Measure and set navbar height
+    useEffect(() => {
+        const updateNavbarHeight = () => {
+            if (navRef.current) {
+                const height = navRef.current.offsetHeight;
+                document.documentElement.style.setProperty('--navbar-height', `${height}px`);
+            }
+        };
+
+        updateNavbarHeight();
+        window.addEventListener('resize', updateNavbarHeight);
+        return () => window.removeEventListener('resize', updateNavbarHeight);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -62,6 +77,7 @@ function Navigation({
 
     return (
         <nav
+            ref={navRef}
             className={`navbar ${isScrolled ? "scrolled" : ""}`}
             style={{
                 "--nav-bg-color": backgroundColor,
