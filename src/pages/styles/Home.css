@@ -31,10 +31,10 @@
     min-width: 220px;
     padding: 1.5rem;
     position: sticky;
-    top: 0;
+    top: calc(var(--navbar-height, 80px) + 1rem); /* Offset by navbar height + padding */
     align-self: flex-start;
     height: fit-content;
-    max-height: 100vh;
+    max-height: calc(100vh - var(--navbar-height, 80px) - 2rem); /* Adjust max height */
     overflow-y: auto;
 }
 
@@ -91,9 +91,9 @@
     }
 
     .sidebar-image {
-        width: 150px;
-        min-width: 150px;
-        max-width: 150px;
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
         flex-shrink: 0;
     }
 
@@ -124,9 +124,9 @@
     }
 
     .sidebar-image {
-        width: 120px;
-        min-width: 120px;
-        max-width: 120px;
+        width: 200px;
+        min-width: 200px;
+        max-width: 200px;
     }
 
     .github-calendar-home {
