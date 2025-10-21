@@ -3,6 +3,7 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
+    Navigate,
     useLocation,
     useNavigate,
 } from "react-router-dom";
@@ -15,6 +16,8 @@ import About from "./pages/About";
 import Resume from "./pages/Resume";
 import "./styles/App.css";
 import "./styles/text.css";
+
+const WIPpage = "/projects"
 
 function AppContent() {
     const location = useLocation();
@@ -32,11 +35,11 @@ function AppContent() {
                 onNavigate={handleNavigate}
                 backgroundColor="#010409"
                 textColor="#f0f6fc"
-                brandFontSize="1.7rem"
+                brandFontSize="2.3rem"
                 linkFontSize="1.2rem"
                 iconSize={35}
                 navItems={[
-                    { path: "/", label: "Home", icon: HomeIcon },
+                    { path: "/home", label: "Home", icon: HomeIcon },
                     { path: "/about", label: "About", icon: User },
                     { path: "/projects", label: "Projects", icon: Briefcase },
                     { path: "/resume", label: "Resume", icon: FileText },
@@ -44,7 +47,8 @@ function AppContent() {
             />
             <div className="app-container mt-4">
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Navigate to={WIPpage} replace />} />
+                    <Route path="/home" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/resume" element={<Resume />} />
