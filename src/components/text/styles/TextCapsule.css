@@ -1,11 +1,78 @@
-/* Text Capsule */
+/* Text Capsule Styles - Matching Project Card Buttons */
 .text-capsule {
-    display: inline-block;
-    margin: 4px;
-    padding: 8px 16px;
-    border-radius: 9999px;
-    transition: all 0.3s ease;
-    border: 2px solid;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #ffffff;
     font-size: 14px;
     font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin: 6px 0;
+    width: 100%;
+    justify-content: flex-start;
+    word-wrap: break-word;
+    word-break: break-word;
+    max-width: 560px;
+}
+
+.text-capsule:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.text-capsule:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.capsule-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.text-capsule:hover .capsule-icon {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.capsule-text {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .text-capsule {
+        padding: 12px 18px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .text-capsule {
+        padding: 10px 14px;
+    }
+}
+
+/* Alternative style option - with more prominent hover effect */
+.text-capsule.prominent {
+    background: rgba(96, 165, 250, 0.1);
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+.text-capsule.prominent:hover {
+    background: rgba(96, 165, 250, 0.2);
+    border-color: rgba(96, 165, 250, 0.5);
+    box-shadow: 0 4px 16px rgba(96, 165, 250, 0.3);
 }

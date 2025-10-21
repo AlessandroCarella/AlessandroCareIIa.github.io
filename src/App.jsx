@@ -17,7 +17,7 @@ import Resume from "./pages/Resume";
 import "./styles/App.css";
 import "./styles/text.css";
 
-const WIPpage = "/projects"
+const WIPpage = "/home";
 
 function AppContent() {
     const location = useLocation();
@@ -47,7 +47,10 @@ function AppContent() {
             />
             <div className="app-container mt-4">
                 <Routes>
-                    <Route path="/" element={<Navigate to={WIPpage} replace />} />
+                    <Route
+                        path="/"
+                        element={<Navigate to={WIPpage} replace />}
+                    />
                     <Route path="/home" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
