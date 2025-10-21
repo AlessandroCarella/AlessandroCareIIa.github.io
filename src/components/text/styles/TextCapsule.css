@@ -1,0 +1,11 @@
+/* Text Capsule */
+.text-capsule {
+    display: inline-block;
+    margin: 4px;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    border: 2px solid;
+    font-size: 14px;
+    font-weight: 500;
+}
