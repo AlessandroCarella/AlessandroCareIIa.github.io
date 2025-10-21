@@ -15,23 +15,26 @@
 .intro-title-wrapper {
     margin-bottom: 2rem;
     width: 100%;
-
 }
 
 .home-container {
     display: flex;
     min-height: 100vh;
     gap: 2rem;
+    width: 100%;
+    max-width: 100%;
 }
 
 .sidebar {
-    width: 20%;
-    min-width: 250px;
-    padding: 1.5rem 1.5rem;
+    flex: 0 0 20%;
+    max-width: 300px;
+    min-width: 220px;
+    padding: 1.5rem;
     position: sticky;
-    top: var(--navbar-height);
+    top: 0;
+    align-self: flex-start;
     height: fit-content;
-    max-height: calc(100vh - var(--navbar-height));
+    max-height: 100vh;
     overflow-y: auto;
 }
 
@@ -44,7 +47,7 @@
 
 .sidebar-image {
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
     aspect-ratio: 1;
     border-radius: 50%;
     object-fit: cover;
@@ -57,9 +60,10 @@
 }
 
 .main-content {
-    flex: 1;
-    width: 80%;
-    padding-right: 2rem;
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0 2rem 0 0;
+    width: 100%;
 }
 
 /* Responsive breakpoints */
@@ -70,9 +74,13 @@
     }
 
     .sidebar {
-        width: 100%;
         position: relative;
-        padding: 2rem 1.5rem;
+        flex: unset;
+        max-width: 100%;
+        min-width: unset;
+        width: 100%;
+        padding: 1.5rem;
+        top: 0;
         max-height: none;
     }
 
@@ -83,8 +91,9 @@
     }
 
     .sidebar-image {
-        width: 200px;
-        max-width: 200px;
+        width: 150px;
+        min-width: 150px;
+        max-width: 150px;
         flex-shrink: 0;
     }
 
@@ -95,14 +104,19 @@
 
     .main-content {
         width: 100%;
-        padding-right: 0;
+        padding: 0;
     }
 }
 
 @media (max-width: 640px) {
+    .sidebar {
+        padding: 1rem;
+    }
+
     .sidebar-content {
         flex-direction: column;
         text-align: center;
+        gap: 1rem;
     }
 
     .sidebar-info {
@@ -110,8 +124,9 @@
     }
 
     .sidebar-image {
-        width: 200px;
-        max-width: 200px;
+        width: 120px;
+        min-width: 120px;
+        max-width: 120px;
     }
 
     .github-calendar-home {
