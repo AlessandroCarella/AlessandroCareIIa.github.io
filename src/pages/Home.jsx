@@ -15,7 +15,7 @@ const Home = () => {
             <aside className="sidebar">
                 <div className="sidebar-content">
                     <img
-                        src="/src/resources/propic.jpeg"
+                        src="/propic.jpeg"
                         alt="Alessandro Carella"
                         className="sidebar-image"
                     />
