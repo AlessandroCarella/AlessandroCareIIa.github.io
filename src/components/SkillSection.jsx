@@ -16,7 +16,7 @@ const SkillSection = ({
 
     return (
         <div className="skill-section">
-            <h3 className="section-title" style={titleStyle}>
+            <h3 className="heading-sm" style={titleStyle}>
                 {sectionName}
             </h3>
             <div className="skills-list">

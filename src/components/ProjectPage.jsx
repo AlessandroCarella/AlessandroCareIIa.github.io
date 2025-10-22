@@ -78,7 +78,7 @@ const ProjectPage = ({
             (el) => (el.className = "heading-md")
         );
         doc.querySelectorAll("h4").forEach(
-            (el) => (el.className = "heading-sm")
+            (el) => (el.className = "heading-md")
         );
         doc.querySelectorAll("p").forEach((el) => (el.className = "paragraph"));
         doc.querySelectorAll("a").forEach((el) => (el.className = "text-link"));
@@ -231,7 +231,7 @@ const ProjectPage = ({
                         {projectData.collaborators &&
                             projectData.collaborators.length > 0 && (
                                 <div className="project-sidebar-section">
-                                    <h3 className="heading-sm sidebar-section-title">
+                                    <h3 className="heading-md sidebar-section-title">
                                         Collaborators
                                     </h3>
                                     <div className="sidebar-items">
@@ -264,7 +264,7 @@ const ProjectPage = ({
                         {/* Repository */}
                         {projectData.repository && (
                             <div className="project-sidebar-section">
-                                <h3 className="heading-sm sidebar-section-title">
+                                <h3 className="heading-md sidebar-section-title">
                                     Repository
                                 </h3>
                                 <div className="sidebar-items">
@@ -290,7 +290,7 @@ const ProjectPage = ({
                         {/* Report PDF */}
                         {projectData.report && (
                             <div className="project-sidebar-section">
-                                <h3 className="heading-sm sidebar-section-title">
+                                <h3 className="heading-md sidebar-section-title">
                                     Report
                                 </h3>
                                 <div className="sidebar-items">
@@ -313,7 +313,7 @@ const ProjectPage = ({
                         {/* Slides PDF */}
                         {projectData.slides && (
                             <div className="project-sidebar-section">
-                                <h3 className="heading-sm sidebar-section-title">
+                                <h3 className="heading-md sidebar-section-title">
                                     Slides
                                 </h3>
                                 <div className="sidebar-items">
@@ -335,7 +335,7 @@ const ProjectPage = ({
                         {/* Keywords */}
                         {projectData.keyWords && (
                             <div className="project-sidebar-section keywords-section">
-                                <h3 className="heading-sm sidebar-section-title">
+                                <h3 className="heading-md sidebar-section-title">
                                     Keywords
                                 </h3>
                                 <div className="keywords-wrapper">

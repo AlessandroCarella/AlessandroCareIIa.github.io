@@ -23,26 +23,26 @@
 /* Project Page Container */
 .project-page-container {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 450px);
+    grid-template-columns: minmax(280px, 450px) minmax(0, 1fr);
     gap: 0;
     width: 100%;
     max-width: 100%;
     min-height: calc(100vh - var(--navbar-height, 80px) - 150px);
 }
 
-/* Main Content - 70% - Appears first in HTML for mobile */
+/* Main Content - 70% - Appears second in desktop (right side) */
 .project-main-content {
     min-width: 0;
-    padding: 0 3rem 2rem 0;
-    order: 1;
+    padding: 0 0 2rem 3rem;
+    order: 2;
     min-height: 100%;
 }
 
-/* Sidebar - 30% - Appears second for mobile */
+/* Sidebar - 30% - Appears first in desktop (left side) */
 .project-sidebar {
-    padding: 0 0 2rem 3rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
-    order: 2;
+    padding: 0 3rem 2rem 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    order: 1;
     min-height: 100%;
 }
 
@@ -154,7 +154,7 @@
     }
 
     .project-sidebar {
-        border-left: none;
+        border-right: none;
         border-top: 1px solid rgba(255, 255, 255, 0.15);
         padding: 2rem 1.5rem 2rem 1.5rem;
         max-width: 100%;
