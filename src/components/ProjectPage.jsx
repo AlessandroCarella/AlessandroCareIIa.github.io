@@ -319,6 +319,7 @@ const ProjectPage = ({
                                 <div className="sidebar-items">
                                     <TextCapsule
                                         name="View Slides"
+                                        link={projectData.slides}
                                         icon={<FileText size={16} />}
                                         fontSize={16}
                                         onClick={() =>

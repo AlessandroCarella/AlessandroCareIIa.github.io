@@ -22,9 +22,10 @@ import ProjectPage from "../components/ProjectPage";
 const ProjectPageDemo = () => {
     return (
         <ProjectPage
-            projectFolderName="DataMining1"
+            projectFolderName="Decision Support System"
             projectsFolder="/src/pages/projects/"
-            imageNames={["heatmap.png", "learningCurve.png"]}
+            // imageNames={["heatmap.png", "learningCurve.png"]}
+            imageNames={[]}
         />
     );
 };
