@@ -3,8 +3,6 @@ import TextPressure from "../components/text/TextPressure";
 import ShinyText from "../components/text/ShinyText";
 import TextCapsule from "../components/text/TextCapsule";
 import Notification from "../components/text/Notification";
-import HoverPreview from "../components/HoverPreview";
-import useHoverPreview from "../components/useHoverPreview";
 import GitHubCalendar from "react-github-calendar";
 import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 

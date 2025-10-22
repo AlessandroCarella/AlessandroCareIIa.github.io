@@ -7,7 +7,6 @@ import {
     useLocation,
     useNavigate,
 } from "react-router-dom";
-import { Container } from "react-bootstrap";
 import { Home as HomeIcon, User, Briefcase, FileText } from "lucide-react";
 import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
@@ -16,8 +15,9 @@ import About from "./pages/About";
 import Resume from "./pages/Resume";
 import "./styles/App.css";
 import "./styles/text.css";
+import ProjectPageDemo from './pages/ProjectPageDemo';
 
-const WIPpage = "/home";
+const WIPpage = "/project-demo";
 
 function AppContent() {
     const location = useLocation();
@@ -47,6 +47,7 @@ function AppContent() {
             />
             <div className="app-container mt-4">
                 <Routes>
+                    <Route path="/project-demo" element={<ProjectPageDemo />} />
                     <Route
                         path="/"
                         element={<Navigate to={WIPpage} replace />}

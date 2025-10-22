@@ -1,7 +1,7 @@
 {
-    "projectName": "Data Mining One",
+    "projectName": "Data Mining I",
     "quickSummary": "Data mining project analyzing 15,000 Spotify tracks using clustering, classification, regression, and pattern mining techniques to predict songs metadata.",
-    "content": "dataMining1.md",
+    "content": "dataMining1.html",
     "collaborators": [
         "https://www.linkedin.com/in/sara-hoxha/",
         "https://www.linkedin.com/in/rafael-ignacio-urbina-hincapi%C3%A9-2ba11a214/"
