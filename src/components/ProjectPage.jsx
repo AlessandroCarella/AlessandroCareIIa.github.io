@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import TextCapsule from "./text/TextCapsule";
 import SkillSection from "./SkillSection";
-import { Github, Linkedin } from "lucide-react";
+import PDFOverlay from "./PDFOverlay";
+import { Github, Linkedin, FileText } from "lucide-react";
 import "./styles/ProjectPage.css";
 
 const ProjectPage = ({
@@ -13,6 +14,7 @@ const ProjectPage = ({
     const [htmlContent, setHtmlContent] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [activePDF, setActivePDF] = useState(null);
 
     useEffect(() => {
         const loadProjectData = async () => {
@@ -98,14 +100,22 @@ const ProjectPage = ({
         try {
             const match = url.match(/\/in\/([^/]+)\/?$/);
             if (match) {
-                // Convert URL-encoded name to readable format
-                const name = match[1]
-                    .replace(/-/g, " ")
+                // Convert URL-encoded name to readable format and split by "-"
+                const rawParts = match[1]
                     .replace(/%C3%A9/g, "é")
                     .replace(/%C3%AD/g, "í")
-                    .split(" ")
+                    .split("-");
+
+                // Remove any part containing digits
+                const filteredParts = rawParts.filter(
+                    (part) => !/\d/.test(part)
+                );
+
+                // Capitalize each part and join with space
+                const name = filteredParts
                     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
                     .join(" ");
+
                 return name;
             }
         } catch (e) {
@@ -142,6 +152,25 @@ const ProjectPage = ({
         });
 
         return formatted;
+    };
+
+    // Get PDF path
+    const getPDFPath = (filename) => {
+        const basePath = `${projectsFolder}${projectFolderName}`;
+        return `${basePath}/${filename}`;
+    };
+
+    // Handle PDF open
+    const handleOpenPDF = (type, filename) => {
+        setActivePDF({
+            type,
+            path: getPDFPath(filename),
+        });
+    };
+
+    // Handle PDF close
+    const handleClosePDF = () => {
+        setActivePDF(null);
     };
 
     if (loading) {
@@ -258,6 +287,51 @@ const ProjectPage = ({
                             </div>
                         )}
 
+                        {/* Report PDF */}
+                        {projectData.report && (
+                            <div className="project-sidebar-section">
+                                <h3 className="heading-sm sidebar-section-title">
+                                    Report
+                                </h3>
+                                <div className="sidebar-items">
+                                    <TextCapsule
+                                        name="View Report"
+                                        link={projectData.report}
+                                        icon={<FileText size={16} />}
+                                        fontSize={16}
+                                        onClick={() =>
+                                            handleOpenPDF(
+                                                "Report",
+                                                projectData.report
+                                            )
+                                        }
+                                    />
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Slides PDF */}
+                        {projectData.slides && (
+                            <div className="project-sidebar-section">
+                                <h3 className="heading-sm sidebar-section-title">
+                                    Slides
+                                </h3>
+                                <div className="sidebar-items">
+                                    <TextCapsule
+                                        name="View Slides"
+                                        icon={<FileText size={16} />}
+                                        fontSize={16}
+                                        onClick={() =>
+                                            handleOpenPDF(
+                                                "Slides",
+                                                projectData.slides
+                                            )
+                                        }
+                                    />
+                                </div>
+                            </div>
+                        )}
+
                         {/* Keywords */}
                         {projectData.keyWords && (
                             <div className="project-sidebar-section keywords-section">
@@ -284,6 +358,15 @@ const ProjectPage = ({
                     </div>
                 </aside>
             </div>
+
+            {/* PDF Overlay */}
+            {activePDF && (
+                <PDFOverlay
+                    pdfPath={activePDF.path}
+                    title={activePDF.type}
+                    onClose={handleClosePDF}
+                />
+            )}
         </div>
     );
 };

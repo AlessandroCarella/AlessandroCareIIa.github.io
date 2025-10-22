@@ -1,0 +1,178 @@
+/* PDF Overlay */
+.pdf-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.pdf-overlay-content {
+    width: 95%;
+    height: 95%;
+    max-width: 1400px;
+    max-height: 90vh;
+    background: #1c1c1c;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Header */
+.pdf-overlay-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    background: #252525;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+.pdf-overlay-title {
+    margin: 0;
+    color: #f0f6fc;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.pdf-overlay-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.pdf-control-button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #c9d1d9;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.pdf-control-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.pdf-control-button:active {
+    transform: translateY(0);
+}
+
+.pdf-close-button {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+.pdf-close-button:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.5);
+}
+
+/* PDF Viewer Container */
+.pdf-viewer-container {
+    flex: 1;
+    overflow: auto;
+    background: #0d1117;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    border: none;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .pdf-overlay-content {
+        width: 98%;
+        height: 98%;
+    }
+
+    .pdf-viewer-container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .pdf-overlay-header {
+        padding: 1rem;
+    }
+
+    .pdf-overlay-title {
+        font-size: 1.1rem;
+    }
+
+    .pdf-control-button {
+        padding: 0.4rem;
+    }
+
+    .pdf-viewer-container {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-overlay-content {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .pdf-overlay-header {
+        padding: 0.75rem;
+    }
+
+    .pdf-overlay-title {
+        font-size: 1rem;
+    }
+
+    .pdf-viewer {
+        min-height: 400px;
+    }
+}
