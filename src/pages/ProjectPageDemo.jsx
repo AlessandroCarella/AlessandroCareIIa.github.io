@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectPage from "../components/ProjectPage";
+import ProjectPage from "./ProjectPage";
 
 /**
  * ProjectPageDemo - Demo component for testing ProjectPage

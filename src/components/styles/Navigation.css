@@ -243,10 +243,6 @@
 
 /* Mobile phone adjustments */
 @media (max-width: 480px) {
-    .nav-brand {
-        font-size: calc(var(--brand-font-size) * 0.5);
-    }
-
     .nav-brand-wrapper {
         padding-left: 1rem;
     }

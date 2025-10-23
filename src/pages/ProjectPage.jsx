@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import TextCapsule from "./text/TextCapsule";
-import SkillSection from "./SkillSection";
-import PDFOverlay from "./PDFOverlay";
-import CollapsibleSection from "./CollapsibleSection";
+import TextCapsule from "../components/text/TextCapsule";
+import SkillSection from "../components/SkillSection";
+import PDFOverlay from "../components/PDFOverlay";
+import CollapsibleSection from "../components/CollapsibleSection";
 import { Github, Linkedin, FileText, BookOpen } from "lucide-react";
 import { SiNotion } from "react-icons/si";
 

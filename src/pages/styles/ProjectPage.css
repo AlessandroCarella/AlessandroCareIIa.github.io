@@ -51,9 +51,6 @@
     flex-direction: column;
     gap: 1rem;
     width: 100%;
-    position: sticky;
-    top: calc(var(--navbar-height, 80px) + 20px);
-    align-self: start;
 }
 
 .project-sidebar-section {
