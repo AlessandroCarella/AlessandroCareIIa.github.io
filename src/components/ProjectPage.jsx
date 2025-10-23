@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import TextCapsule from "./text/TextCapsule";
 import SkillSection from "./SkillSection";
 import PDFOverlay from "./PDFOverlay";
-import { Github, Linkedin, FileText } from "lucide-react";
+import { Github, Linkedin, FileText, BookOpen } from "lucide-react";
+import { SiNotion } from "react-icons/si";
+
 import "./styles/ProjectPage.css";
 
 const ProjectPage = ({
@@ -274,6 +276,30 @@ const ProjectPage = ({
                                         )}
                                         link={projectData.repository}
                                         icon={<Github size={16} />}
+                                        fontSize={16}
+                                        onClick={(link) =>
+                                            window.open(
+                                                link,
+                                                "_blank",
+                                                "noopener,noreferrer"
+                                            )
+                                        }
+                                    />
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Class Notes */}
+                        {projectData.classNotes && (
+                            <div className="project-sidebar-section">
+                                <h3 className="heading-md sidebar-section-title">
+                                    Class Notes
+                                </h3>
+                                <div className="sidebar-items">
+                                    <TextCapsule
+                                        name="View Notes"
+                                        link={projectData.classNotes}
+                                        icon={<SiNotion className="w-6 h-6" />}
                                         fontSize={16}
                                         onClick={(link) =>
                                             window.open(
