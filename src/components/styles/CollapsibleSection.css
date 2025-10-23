@@ -1,0 +1,108 @@
+/* Collapsible Section Styles */
+.collapsible-section {
+    width: 100%;
+}
+
+.collapsible-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: inherit;
+    font-family: inherit;
+    text-align: left;
+}
+
+.collapsible-header:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.collapsible-header:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.2);
+    outline-offset: 2px;
+}
+
+.collapsible-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    flex: 1;
+}
+
+.collapsible-icon {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.collapsible-icon.open {
+    transform: rotate(0deg);
+}
+
+.collapsible-icon.closed {
+    transform: rotate(-90deg);
+}
+
+.collapsible-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.collapsible-content.open {
+    max-height: 5000px;
+    opacity: 1;
+    padding: 1rem 0;
+}
+
+.collapsible-content.closed {
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+}
+
+.collapsible-content-inner {
+    width: 100%;
+}
+
+/* Nested collapsible sections (e.g., within keywords) */
+.collapsible-section .collapsible-section .collapsible-header {
+    padding: 0.5rem 0.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.collapsible-section .collapsible-section .collapsible-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #8b949e;
+}
+
+.collapsible-section .collapsible-section .collapsible-icon {
+    width: 14px;
+    height: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .collapsible-title {
+        font-size: 1.1rem;
+    }
+
+    .collapsible-header {
+        padding: 0.6rem 0.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .collapsible-title {
+        font-size: 1rem;
+    }
+
+    .collapsible-section .collapsible-section .collapsible-title {
+        font-size: 14px;
+    }
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TextCapsule from "./text/TextCapsule";
 import SkillSection from "./SkillSection";
 import PDFOverlay from "./PDFOverlay";
+import CollapsibleSection from "./CollapsibleSection";
 import { Github, Linkedin, FileText, BookOpen } from "lucide-react";
 import { SiNotion } from "react-icons/si";
 
@@ -64,12 +65,18 @@ const ProjectPage = ({
         }
     }, [projectFolderName, projectsFolder, imageNames]);
 
-    // Process HTML content and apply custom classes
-    const processHtmlContent = (html) => {
+    // Parse HTML content into sections based on headings
+    const parseHtmlIntoSections = (html) => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, "text/html");
+        const body = doc.body;
 
-        // Apply custom classes to elements
+        const sections = [];
+        let currentSection = null;
+        let currentSubsection = null;
+        let introContent = [];
+
+        // Apply custom classes to elements first
         doc.querySelectorAll("h1").forEach(
             (el) => (el.className = "heading-xl")
         );
@@ -94,7 +101,52 @@ const ProjectPage = ({
             (el) => (el.style.fontStyle = "italic")
         );
 
-        return doc.body.innerHTML;
+        // Parse through all child nodes
+        Array.from(body.childNodes).forEach((node) => {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+                const tagName = node.tagName.toLowerCase();
+
+                if (tagName === "h2") {
+                    // Save previous section if exists
+                    if (currentSection) {
+                        if (currentSubsection) {
+                            currentSection.subsections.push(currentSubsection);
+                            currentSubsection = null;
+                        }
+                        sections.push(currentSection);
+                    }
+
+                    // Start new section
+                    currentSection = {
+                        title: node.textContent,
+                        content: [],
+                        subsections: [],
+                    };
+                } else {
+                    // Add content to appropriate location
+                    const htmlContent = node.outerHTML;
+
+                    if (currentSubsection) {
+                        currentSubsection.content.push(htmlContent);
+                    } else if (currentSection) {
+                        currentSection.content.push(htmlContent);
+                    } else {
+                        // Content before first heading
+                        introContent.push(htmlContent);
+                    }
+                }
+            }
+        });
+
+        // Save last section and subsection
+        if (currentSubsection && currentSection) {
+            currentSection.subsections.push(currentSubsection);
+        }
+        if (currentSection) {
+            sections.push(currentSection);
+        }
+
+        return { introContent, sections };
     };
 
     // Extract collaborator names from LinkedIn URLs
@@ -191,26 +243,25 @@ const ProjectPage = ({
                 <div className="error-message">
                     <h2 className="heading-lg">Error Loading Project</h2>
                     <p className="paragraph">{error}</p>
+                    <p className="paragraph">
+                        Please check that the project files exist at:
+                        <br />
+                        {projectsFolder}
+                        {projectFolderName}/
+                    </p>
                 </div>
             </div>
         );
     }
 
-    if (!projectData) {
-        return null;
-    }
-
-    const colors = {
-        background: "transparent",
-        mainTitle: "#f0f6fc",
-        sectionTitle: "#c9d1d9",
-    };
+    const colors = ["blue", "green", "purple", "orange", "red"];
+    const { introContent, sections } = parseHtmlIntoSections(htmlContent);
 
     return (
         <div className="project-page-wrapper">
-            {/* Project Title - Full Width */}
+            {/* Project Title */}
             <div className="project-title-section">
-                <h1 className="heading-xl project-main-title">
+                <h1 className="project-main-title">
                     {projectData.projectName}
                 </h1>
             </div>
@@ -218,12 +269,34 @@ const ProjectPage = ({
             <div className="project-page-container">
                 {/* Main Content - 70% */}
                 <main className="project-main-content">
-                    <div
-                        className="project-content-wrapper"
-                        dangerouslySetInnerHTML={{
-                            __html: processHtmlContent(htmlContent),
-                        }}
-                    />
+                    <div className="project-content-wrapper">
+                        {/* Intro content (before first heading) */}
+                        {introContent.length > 0 && (
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: introContent.join(""),
+                                }}
+                            />
+                        )}
+
+                        {/* Main sections with collapsible subsections */}
+                        {sections.map((section, sectionIndex) => (
+                            <CollapsibleSection
+                                key={`section-${sectionIndex}`}
+                                title={section.title}
+                                defaultOpen={section.title == "What I Learned" ? true : false}
+                            >
+                                {/* Section content */}
+                                {section.content.length > 0 && (
+                                    <div
+                                        dangerouslySetInnerHTML={{
+                                            __html: section.content.join(""),
+                                        }}
+                                    />
+                                )}
+                            </CollapsibleSection>
+                        ))}
+                    </div>
                 </main>
 
                 {/* Sidebar - 30% */}

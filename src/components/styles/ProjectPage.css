@@ -120,6 +120,61 @@
     max-width: 100%;
 }
 
+/* Main content collapsible sections styling */
+.project-main-content .collapsible-section {
+    margin-bottom: 1.5rem;
+}
+
+.project-main-content .collapsible-header {
+    padding: 1rem 0.75rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.project-main-content .collapsible-header:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.project-main-content .collapsible-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Nested subsections in main content */
+.project-main-content .collapsible-section .collapsible-section {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+}
+
+.project-main-content
+    .collapsible-section
+    .collapsible-section
+    .collapsible-header {
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+}
+
+.project-main-content
+    .collapsible-section
+    .collapsible-section
+    .collapsible-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.project-main-content .collapsible-content {
+    padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.project-main-content
+    .collapsible-section
+    .collapsible-section
+    .collapsible-content {
+    padding: 1rem 0.5rem 0 0.5rem;
+}
+
 /* Project Images */
 .project-image {
     max-width: 100%;
@@ -128,6 +183,28 @@
     margin: 2rem 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     display: block;
+}
+
+/* Tables in main content */
+.project-main-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.project-main-content table th,
+.project-main-content table td {
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.project-main-content table th {
+    background: rgba(255, 255, 255, 0.05);
+    font-weight: 600;
+}
+
+.project-main-content table tr:hover {
+    background: rgba(255, 255, 255, 0.02);
 }
 
 /* Loading and Error States */
@@ -209,6 +286,17 @@
     .project-main-content {
         padding: 0 1rem 1.5rem 1rem;
     }
+
+    .project-main-content .collapsible-title {
+        font-size: 1.3rem;
+    }
+
+    .project-main-content
+        .collapsible-section
+        .collapsible-section
+        .collapsible-title {
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -236,6 +324,32 @@
     .project-sidebar {
         padding: 1.5rem 0.75rem 1rem 0.75rem;
     }
+
+    .project-main-content .collapsible-header {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .project-main-content .collapsible-title {
+        font-size: 1.25rem;
+    }
+
+    .project-main-content
+        .collapsible-section
+        .collapsible-section
+        .collapsible-header {
+        padding: 0.6rem 0.4rem;
+    }
+
+    .project-main-content
+        .collapsible-section
+        .collapsible-section
+        .collapsible-title {
+        font-size: 1rem;
+    }
+
+    .project-main-content .collapsible-section .collapsible-section {
+        margin-left: 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -254,5 +368,24 @@
     .keywords-wrapper .text-capsule {
         font-size: 11px;
         padding: 5px 10px;
+    }
+
+    .project-main-content .collapsible-title {
+        font-size: 1.1rem;
+    }
+
+    .project-main-content
+        .collapsible-section
+        .collapsible-section
+        .collapsible-title {
+        font-size: 0.95rem;
+    }
+
+    .project-main-content .collapsible-header {
+        padding: 0.6rem 0.4rem;
+    }
+
+    .project-main-content .collapsible-content {
+        padding: 1rem 0.25rem 0.5rem 0.25rem;
     }
 }
