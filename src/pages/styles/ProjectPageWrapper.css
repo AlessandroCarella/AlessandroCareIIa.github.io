@@ -1,0 +1,106 @@
+/* ProjectPageWrapper specific styles */
+
+/* Loading State */
+.loading-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-message p {
+    color: #8b949e;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Error State */
+.error-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+.error-message h2 {
+    font-size: 2rem;
+    color: #ff6b6b;
+    margin: 0;
+}
+
+.error-message p {
+    color: #8b949e;
+    font-size: 1.1rem;
+    margin: 0;
+    max-width: 500px;
+}
+
+.back-button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border-width: 3px;
+    }
+
+    .loading-message p {
+        font-size: 1rem;
+    }
+
+    .error-message h2 {
+        font-size: 1.5rem;
+    }
+
+    .error-message p {
+        font-size: 1rem;
+    }
+
+    .back-button {
+        padding: 0.6rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
