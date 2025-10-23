@@ -1,14 +1,15 @@
 {
-    "projectName": "Chicago Traffic Crash Data Warehouse and Analytics System",
+    "projectName": "Decision Support System",
     "quickSummary": "A comprehensive data warehouse and OLAP solution analyzing Chicago traffic crash data to support insurance company decision-making through multidimensional analysis, ETL pipelines, MDX queries, and interactive dashboards.",
     "content": "DSS.html",
     "collaborators": [
-        "https://www.linkedin.com/in/sara-hoxha/",
-        "https://www.linkedin.com/in/rafael-ignacio-urbina-hincapi%C3%A9-2ba11a214/"
+        "https://www.linkedin.com/in/rafael-ignacio-urbina-hincapi%C3%A9-2ba11a214/",
+        "https://www.linkedin.com/in/sara-hoxha/"
     ],
     "repository": "https://github.com/SaraHoxha/lds-dw-modelling",
     "report": "REPORT Decision Support Systems.pdf",
     "slides": "PRESENTATION Decision Support Systems.pdf",
+    "classNotes": "https://alessandro-carella.notion.site/Decision-support-systems-11aa1f6cd9d0807c8784f6d327d6bf7b",
     "skills": [
         "Data Warehouse Design",
         "ETL Development",

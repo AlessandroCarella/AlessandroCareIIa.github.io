@@ -13,6 +13,66 @@
     panel of this page. The linked class notes refer to the data mining 2 class
     since the second module expanded the first class concepts.
 </p>
+
+<h2 id="what-i-learned">What I Learned</h2>
+<p>
+    This project proved to be an invaluable learning experience that shaped my
+    understanding of practical data mining applications.
+</p>
+<p>
+    Working collaboratively with my colleagues (who became friends in the
+    meanwhile) taught me that data science is as much about teamwork and
+    communication as it is about technical skills. Dividing responsibilities,
+    reviewing each other's progresses, and discussing approaches helped me
+    develop better coding practices and learn to articulate technical concepts
+    clearly.
+</p>
+<p>
+    <strong
+        >The biggest technical lesson was understanding that real-world data is
+        messy.</strong
+    >
+    The data preparation phase consumed far more time than I initially expected,
+    but it taught me critical thinking about data quality. Deciding when to
+    impute missing values versus removing them, determining the correct outlier
+    thresholds, and justifying each preprocessing decision required careful
+    consideration of the impact on our models. I learned that these early
+    decisions fundamentally change project outcomes since no sophisticated
+    algorithm can compensate for poor data preparation.
+</p>
+<p>
+    The clustering analysis was humbling. Despite implementing seven different
+    algorithms with various parameter configurations, we achived modest
+    performance metrics. This taught me that
+    <strong>not every dataset is naturally "clusterable"</strong> and that
+    sometimes the data, especially if multifaced as music ones, simply doesn't
+    have clear groupings. Learning to interpret and communicate these
+    limitations honestly is as important as celebrating successes.
+</p>
+<p>
+    The regression work reinforced the importance of understanding real-world
+    data's relationships. Discovering that n_beats could predict duration with
+    94.7% accuracy seems obvious in retrospect, longer songs naturally have more
+    beats, but identifying such strong predictors requires domain knowledge
+    combined with statistical analysis.
+</p>
+<p>
+    <strong
+        >Perhaps most importantly, this project taught me the iterative nature
+        of data science.</strong
+    >
+    We constantly cycled between analysis, interpretation, refinement, and
+    re-analysis. Initial approaches rarely worked perfectly; success came from
+    experimentation, learning from failures, and incremental improvement.
+</p>
+<p>
+    Looking back through the commit history, I can see my growth not just in
+    technical proficiency with Python libraries (scikit-learn, pandas,
+    matplotlib) but in my analytical thinking and problem-solving approach. This
+    foundational project established methodologies and best practices that I
+    continue to apply in my work today.
+</p>
+
 <p>
     Here is a quick summary of what we worked on as a group, but you can see my
     specific contributions through the
@@ -21,6 +81,7 @@
         >github commits page</a
     >.
 </p>
+
 <h2 id="data-understanding-and-preparation">
     Data Understanding and Preparation
 </h2>
@@ -75,64 +136,6 @@
     closed itemsets, and maximal itemsets from preprocessed data with binned
     continuous variables. Optimal parameters were identified at 25% support and
     65% confidence, yielding 208 association rules. The analysis successfully
-    predicted the "explicit" variable, demonstrating that very long
-    songs with very low liveliness and speechiness tend to be non-explicit.
-</p>
-<h2 id="what-i-learned">What I Learned</h2>
-<p>
-    This project proved to be an invaluable learning experience that shaped my
-    understanding of practical data mining applications.
-</p>
-<p>
-    Working collaboratively with my colleagues (who became friends in the
-    meanwhile) taught me that data science is as much about teamwork and
-    communication as it is about technical skills. Dividing responsibilities,
-    reviewing each other's progresses, and discussing approaches helped me
-    develop better coding practices and learn to articulate technical concepts
-    clearly.
-</p>
-<p>
-    <strong
-        >The biggest technical lesson was understanding that real-world data is
-        messy.</strong
-    >
-    The data preparation phase consumed far more time than I initially expected,
-    but it taught me critical thinking about data quality. Deciding when to
-    impute missing values versus removing them, determining the correct outlier
-    thresholds, and justifying each preprocessing decision required careful
-    consideration of the impact on our models. I learned that these early
-    decisions fundamentally change project outcomes since no sophisticated
-    algorithm can compensate for poor data preparation.
-</p>
-<p>
-    The clustering analysis was humbling. Despite implementing seven different
-    algorithms with various parameter configurations, we achived modest
-    performance metrics. This taught me that
-    <strong>not every dataset is naturally "clusterable"</strong> and
-    that sometimes the data, especially if multifaced as music ones, simply
-    doesn't have clear groupings. Learning to interpret and communicate
-    these limitations honestly is as important as celebrating successes.
-</p>
-<p>
-    The regression work reinforced the importance of understanding real-world
-    data's relationships. Discovering that n_beats could predict duration
-    with 94.7% accuracy seems obvious in retrospect, longer songs naturally have
-    more beats, but identifying such strong predictors requires domain knowledge
-    combined with statistical analysis.
-</p>
-<p>
-    <strong
-        >Perhaps most importantly, this project taught me the iterative nature
-        of data science.</strong
-    >
-    We constantly cycled between analysis, interpretation, refinement, and
-    re-analysis. Initial approaches rarely worked perfectly; success came from
-    experimentation, learning from failures, and incremental improvement.
-</p>
-<p>
-    Looking back through the commit history, I can see my growth not just in
-    technical proficiency with Python libraries (scikit-learn, pandas,
-    matplotlib) but in my analytical thinking and problem-solving approach. This
-    foundational project established methodologies and best practices that I
-    continue to apply in my work today.
+    predicted the "explicit" variable, demonstrating that very long songs with
+    very low liveliness and speechiness tend to be non-explicit.
 </p>
