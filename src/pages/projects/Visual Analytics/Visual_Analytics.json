@@ -1,0 +1,8 @@
+{
+    "projectName": "Visual Analytics",
+    "quickSummary": "Interactive data visualization for the VAST Challenge 2023.",
+    "content": "Visual_Analytics.html",
+    "report": "REPORT Visual analytics.pdf",
+    "collaborators": [],
+    "repository": "https://github.com/AlessandroCarella/Visual-analytics"
+}

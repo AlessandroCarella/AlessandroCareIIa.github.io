@@ -1,0 +1,9 @@
+{
+    "projectName": "Healthy Catering",
+    "quickSummary": "3D game.",
+    "content": "Healthy_Catering.html",
+    "report": "REPORT Heatlhy Catering.pdf",
+    "userManual": "USER MANUAL Heatlhy Catering.pdf",
+    "collaborators": ["Saverio"],
+    "repository": "https://github.com/AlessandroCarella/Healthy-Catering-Alessandro"
+}

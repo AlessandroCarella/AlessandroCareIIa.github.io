@@ -1,0 +1,9 @@
+{
+    "projectName": "Fundamentals of Business Management",
+    "quickSummary": "Business management project.",
+    "content": "Fundamentals_of_Business_Management.html",
+    "report": "REPORT Fundamentals of Business Management.pdf",
+    "slides": "PRESENTATION Fundamentals of Business Management.pdf",
+    "collaborators": ["Ibrahima Jallow", "Marco Poiani", "Simona Cattari"],
+    "repository": "https://github.com/AlessandroCarella/Foundamentals-of-business-management-project"
+}

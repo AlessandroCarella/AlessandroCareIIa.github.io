@@ -1,0 +1,8 @@
+{
+    "projectName": "Statistics for Data Science",
+    "quickSummary": "Statistical analysis project applying fundamental statistical methods and hypothesis testing to real-world data science problems.",
+    "content": "Statistics_for_Data_Science.html",
+    "slides": "PRESENTATION statistics for data science.pdf",
+    "collaborators": ["Rafael"],
+    "repository": "https://github.com/AlessandroCarella/Statistics-for-data-science-project-24-25"
+}
